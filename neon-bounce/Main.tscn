@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cr2nd8c2ilduo"]
+
+[ext_resource type="PackedScene" uid="uid://r8i8vei4vwy" path="res://Player.tscn" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://bp4eey3mcoh6m" path="res://Main.gd" id="1_uu6xs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
+size = Vector2(1152, 32)
+
+[node name="Main" type="Node2D" unique_id=1385063676]
+script = ExtResource("1_uu6xs")
+
+[node name="Player" parent="." unique_id=318404794 instance=ExtResource("1_glv2v")]
+position = Vector2(100, 400)
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1359338439]
+position = Vector2(0, 550)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=983628842]
+shape = SubResource("RectangleShape2D_uu6xs")
+
+[node name="ColorRect" type="ColorRect" parent="Floor" unique_id=1028142936]
+offset_left = -576.0
+offset_top = -16.0
+offset_right = 576.0
+offset_bottom = 16.0
+color = Color(0, 1, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2047124915]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=549891721]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 81.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "Score: 0"
